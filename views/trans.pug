@@ -2,6 +2,5 @@ h1 Sách đã cho mượn
 hr
 a(href="/transaction/create") thêm Id người mượn
 ul 
-	li phong
-	li hiếu
-	li khôi
+   each tran in trans
+   	    li= tran.userId

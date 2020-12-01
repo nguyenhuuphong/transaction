@@ -1,7 +1,7 @@
 h1 Cho mượn sách theo tên
 hr
 
-form(action='' method="POST")
+form(action='/transaction/create' method="POST")
   label(for='userId') Chọn 1 userId:
   select(name='userId')
     each user in users 

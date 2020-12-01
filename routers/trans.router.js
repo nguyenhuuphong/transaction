@@ -6,9 +6,10 @@ var router = express.Router();
 
 // show người đã mượn sách
 router.get("/",(req, res) => {
-	var transaction = db.get('trans').value();
+	var trans = db.get('trans').value();
+
 	res.render("trans", {
-    	transaction
+    	trans
 	});
 });
 // thêm userId và BookId mới
@@ -22,11 +23,9 @@ router.get("/create", (req, res) => {
  	});
 })
 router.post("/create", (req, res) => {
-	var userId = db.get("user").value(req.body.userId);
-	var bookId = db.get("books").value(req.body.bookId);
+	req.body.id = shortid.generate();
 
-	db.get('trans').push({userId: userId, bookId: bookId}).write();
-  
+	db.get('trans').push(req.body).write();  
     res.redirect("/transaction");
 })
 module.exports = router;
