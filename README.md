@@ -1,6 +1,5 @@
-# hello-express
-
-A server that serves a webpage, its resources, and some data
+# transaction full không có MVC
+bài tập transaction - đầy đủ 
 
 
 ## Your Project
