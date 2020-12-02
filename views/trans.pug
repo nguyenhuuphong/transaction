@@ -1,6 +1,5 @@
 h1 Sách đã cho mượn
-hr
-a(href="/transaction/create") thêm Id người mượn
-ul 
-   each tran in trans
-   	    li= tran.userId
+
+ul
+	each transaction in transactions
+		li #{transaction.user.name} đã mượn sách #{transaction.book.title}
